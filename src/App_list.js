@@ -42,7 +42,7 @@ export default class App extends React.Component {
                 <div className="main">
                     <h2>ユーザリスト</h2>
                 </div>
-                <div className="App">
+                <div className="App" style={{textAlign: "center"}}>
                     {/* {this.state.test_id} */}
                     {/* list 配列の要素数分 ListItem コンポーネントを展開 */}
                     {this.state.list.map(list => (
