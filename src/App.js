@@ -46,7 +46,9 @@ const App = () => {
           </Container>
         )}
         {!isAuthenticated && (
-          <Top />
+          <Container className="flex-grow-1 mt-5">
+            <Top />
+          </Container>
         )} 
         <Footer />
       </div>
