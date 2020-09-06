@@ -2,9 +2,7 @@ import React from "react";
 import axios from 'axios';
 
 import './App_list.css';
-import ListItem from "./ListItem.js"
-import Footer from "./Footer.js";
-import Header from "./Header.js";
+import ListItem from "../components/ListItem.js"
 
 const API_BASE_URL = 'https://mdntueu7u8.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
 
@@ -38,7 +36,6 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-            <Header/>
                 <div className="main">
                     <h2>ユーザリスト</h2>
                 </div>
@@ -53,7 +50,6 @@ export default class App extends React.Component {
                         ))}
                     </div>
                 </div>
-            <Footer/>
             </div>
         );
     }
