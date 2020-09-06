@@ -37,7 +37,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <div className="main">
-                    <h2>ユーザリスト</h2>
+                    <h2>USER LIST</h2>
                 </div>
                 <div class="wrapper">
                     <div className="App" style={{textAlign: "center"}}>
