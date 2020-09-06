@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
     return (
       <footer>
         <hr/>
-        <span>フッタです</span>
+        <span>since 2020/09 matusoka takashi.INC</span>
       </footer>
     );
   }
