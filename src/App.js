@@ -7,7 +7,7 @@ import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./views/Home";
-import Home from "./views/Top";
+import Top from "./views/Top";
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalApi";
 import List from "./views/App_list"
