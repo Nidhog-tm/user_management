@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 
-import Hero from "../components/Menu";
+import Menu from "../components/Menu";
 
 const Home = () => (
   <Fragment>
-    <Hero />
+    <Menu />
     <hr />
   </Fragment>
 );
