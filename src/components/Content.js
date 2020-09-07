@@ -1,20 +1,23 @@
 import React, { Component } from "react";
-
+import { withRouter } from 'react-router';
 import { Button, Row, Col } from "reactstrap";
 
 class Content extends Component {
+  handleToAboutPage = () => {
+    this.props.history.push('/list')
+  }
   render() {
     return (
       <div className="next-steps my-5">
-        <h2 className="my-5 text-center">What can I do next?</h2>
         <Row className="d-flex justify-content-between">
           <Button
             id="qsUserListBtn"
-            color="primary"
+            color="info"
             size="lg"
+            outline
             block
             className="btn-margin"
-            onClick={event =>  window.location.href='/list'}
+            onClick={this.handleToAboutPage}
           >
             User List
           </Button>
@@ -24,4 +27,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default withRouter(Content);
