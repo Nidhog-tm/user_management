@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
-import { Button, Row, Col } from "reactstrap";
+import { Button, Row } from "reactstrap";
 
 class Content extends Component {
   handleToAboutPage = () => {
