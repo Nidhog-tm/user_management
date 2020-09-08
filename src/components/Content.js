@@ -3,8 +3,11 @@ import { withRouter } from 'react-router';
 import { Button, Row } from "reactstrap";
 
 class Content extends Component {
-  handleToAboutPage = () => {
+  handleToListPage = () => {
     this.props.history.push('/list')
+  }
+  handleToAddPage = () => {
+    this.props.history.push('/add')
   }
   render() {
     return (
@@ -17,9 +20,20 @@ class Content extends Component {
             outline
             block
             className="btn-margin"
-            onClick={this.handleToAboutPage}
+            onClick={this.handleToListPage}
           >
             User List
+          </Button>
+          <Button
+            id="qsUserAddBtn"
+            color="info"
+            size="lg"
+            outline
+            block
+            className="btn-margin"
+            onClick={this.handleToAddPage}
+          >
+            Add User
           </Button>
         </Row>
       </div>

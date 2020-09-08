@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 import Home from "./views/Home";
 import Top from "./views/Top";
 import Profile from "./views/Profile";
-import ExternalApi from "./views/ExternalApi";
 import List from "./views/App_list"
+import Add from "./views/App_add"
 import history from "./utils/history";
 
 // styles
@@ -40,8 +40,8 @@ const App = () => {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/profile" component={Profile} />
-              <Route path="/external-api" component={ExternalApi} />
               <Route path="/list" component={List} />
+              <Route path="/add" component={Add} />
             </Switch>
           </Container>
         )}
