@@ -20,6 +20,8 @@ import {
 
 import { useAuth0 } from "@auth0/auth0-react";
 
+import logo from "../assets/logo_m.png";
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -37,9 +39,11 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
-      <Navbar color="light" light expand="md">
+      <Navbar color="info" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          <NavbarBrand>
+            <img className="mb-3 app-logo" src={logo} alt="React logo" width="70" />
+          </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
