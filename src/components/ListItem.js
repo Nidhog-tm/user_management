@@ -1,20 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ListItem.css';
 
-class ListItem extends Component {
-  render() {
-    const {
-      test_id,
-      name
-    } = this.props;
-
-    return (
+function ListItem(props) {
+  return (
       <div className="ListItem">
-        <div className="ListItem-testID">{test_id}</div>
-        <div className="ListItem-name">{name}</div>
+        <div className="ListItem-testID">{props.test_id}</div>
+        <div className="ListItem-name">{props.name}</div>
       </div>
-    );
-  }
+  );
 }
 
 export default ListItem;
