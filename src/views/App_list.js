@@ -1,58 +1,48 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
 
 import './App_list.css';
+import Loading from "../components/Loading";
 import ListItem from "../components/ListItem.js"
 
 const API_BASE_URL = 'https://mdntueu7u8.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
+const IndicateList = () => {
+    const[list, setState] = useState(null);
 
-        this.state = {
-            // test_id: ``
-            list: []
-        }
-    }
-    componentWillMount() {
-        // コンポーネントがマウントされる前にデータを取得する
-        this.getDataFromApi();
-    }
-    async getDataFromApi() {
+    const getDataFromApi= async () => {
         // APIをコール
         await axios.get(API_BASE_URL)
             .then((response) => {
-                // log 
-                console.log(JSON.parse(response.data.body.body).result);
-
                 // APIから取得したデータをstateに保存
-                this.setState({
-                    list: JSON.parse(response.data.body.body).result
-                });
-                console.log(this.state.list);
+                setState(
+                    JSON.parse(response.data.body.body).result
+                );
             })
     }
-    render() {
-        return (
-            <div>
-                <div className="main">
-                    <h2>USER LIST</h2>
-                </div>
-                <div className="App" style={{textAlign: "center"}}>
-                    {/* list 配列の要素数分 ListItem コンポーネントを展開 */}
-                    {this.state.list.map(list => (
-                        <ListItem
-                        test_id={list.test_id}
-                        name={list.name}
-                        />
-                    ))}
-                </div>
-            </div>
-        );
-    }
-}
 
-// index.htmlの.containerに描画する
-// ReactDOM.render(<App />, document.querySelector('.container'));
-// export default App;
+    useEffect(() => {
+        getDataFromApi();
+    }, []);
+
+    return (
+        <div>
+            <div className="main">
+                <h2>USER LIST</h2>
+            </div>
+            <div className="App" style={{textAlign: "center"}}>
+            {/* list 配列の要素数分 ListItem コンポーネントを展開 */}
+            {list === null && <Loading />}
+            {list &&
+                list.map((lisrItem) => (
+                    <ListItem
+                    test_id={lisrItem.test_id}
+                    name={lisrItem.name}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default IndicateList;
