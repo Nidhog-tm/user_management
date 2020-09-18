@@ -1,4 +1,4 @@
-# react 設定
+# 以下をこれから修正する予定
 
 ## create-react-app をインストール
 
@@ -15,7 +15,7 @@ create-react-app <プロジェクト名>
 ## APIと連携するためにaxiosもインストール
 
 ```bash
-npm install axios
+npm install --save axios
 ```
 
 ## Auth0 パッケージインストール
@@ -28,7 +28,7 @@ npm install @auth0/auth0-spa-js
 ## Font Awesome パッケージインストール
 
 ```bash
-npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/react-fontawesome
 ```

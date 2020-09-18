@@ -94,7 +94,7 @@ const NavBar = () => {
                     />
                   </DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem header>{user.name}</DropdownItem>
+                    {/* <DropdownItem header>{user.name}</DropdownItem>
                     <DropdownItem
                       tag={RouterNavLink}
                       to="/profile"
@@ -102,7 +102,7 @@ const NavBar = () => {
                       activeClassName="router-link-exact-active"
                     >
                       <FontAwesomeIcon icon="user" className="mr-3" /> Profile
-                    </DropdownItem>
+                    </DropdownItem> */}
                     <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
@@ -134,7 +134,7 @@ const NavBar = () => {
                 navbar
                 style={{ minHeight: 170 }}
               >
-                <NavItem>
+                {/* <NavItem>
                   <span className="user-info">
                     <img
                       src={user.picture}
@@ -144,7 +144,7 @@ const NavBar = () => {
                     />
                     <h6 className="d-inline-block">{user.name}</h6>
                   </span>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                   <FontAwesomeIcon icon="user" className="mr-3" />
                   <RouterNavLink

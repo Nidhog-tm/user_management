@@ -8,14 +8,14 @@ import ListItem from "../components/ListItem.js"
 const API_BASE_URL = 'https://mdntueu7u8.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
 
 const IndicateList = () => {
-    const[list, setState] = useState(null);
+    const[list, setList] = useState(null);
 
-    const getDataFromApi= async () => {
+    const getDataFromApi = async () => {
         // APIをコール
         await axios.get(API_BASE_URL)
             .then((response) => {
                 // APIから取得したデータをstateに保存
-                setState(
+                setList(
                     JSON.parse(response.data.body.body).result
                 );
             })
