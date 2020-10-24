@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
 import { Button, Row } from "reactstrap";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 class Content extends Component {
   handleToListPage = () => {
@@ -9,33 +11,79 @@ class Content extends Component {
   handleToAddPage = () => {
     this.props.history.push('/add')
   }
+  handleToSliderPage = () => {
+    this.props.history.push('/slider')
+  }
+  handleToUserSliderPage = () => {
+    this.props.history.push('/userslider')
+  }
   render() {
     return (
       <div className="next-steps my-5">
-        <Row className="d-flex justify-content-between">
-          <Button
-            id="qsUserListBtn"
-            color="info"
-            size="lg"
-            outline
-            block
-            className="btn-margin"
-            onClick={this.handleToListPage}
-          >
-            User List
-          </Button>
-          <Button
-            id="qsUserAddBtn"
-            color="info"
-            size="lg"
-            outline
-            block
-            className="btn-margin"
-            onClick={this.handleToAddPage}
-          >
-            Add User
-          </Button>
-        </Row>
+        <motion.div
+          animate={{
+            x: 0,
+            opacity: 1
+          }}
+          initial={{
+            x: 100,
+            opacity: 0
+          }}
+          exit={{
+            x: -100,
+            opacity: 0
+          }}
+          transition={{
+            duration: 0.2
+          }}
+        >
+          <Row className="d-flex justify-content-between">
+            <Button
+              id="qsUserListBtn"
+              color="info"
+              size="lg"
+              outline
+              block
+              className="btn-margin"
+              onClick={this.handleToListPage}
+            >
+              User List
+            </Button>
+            <Button
+              id="qsUserAddBtn"
+              color="info"
+              size="lg"
+              outline
+              block
+              className="btn-margin"
+              onClick={this.handleToAddPage}
+            >
+              Add User
+            </Button>
+            <Button
+              id="qsSampleSliderBtn"
+              color="info"
+              size="lg"
+              outline
+              block
+              className="btn-margin"
+              onClick={this.handleToSliderPage}
+            >
+              Sample Slider ※工事中
+            </Button>
+            <Button
+              id="qsSampleSliderBtn"
+              color="info"
+              size="lg"
+              outline
+              block
+              className="btn-margin"
+              onClick={this.handleToUserSliderPage}
+            >
+              User Slider ※工事中
+            </Button>
+          </Row>
+        </motion.div>
       </div>
     );
   }

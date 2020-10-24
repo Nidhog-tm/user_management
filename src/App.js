@@ -1,11 +1,15 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
+import { AnimatePresence} from "framer-motion";
 import { Container } from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Loading from "./components/Loading";
 import NavBar from "./components/NavBar";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import SimpleSlider from "./components/Slider";
+import UserSlider from "./components/UserSlider";
 import Home from "./views/Home";
 import Top from "./views/Top";
 import Profile from "./views/Profile";
@@ -32,17 +36,28 @@ const App = () => {
   }
 
   return (
+
+    
     <Router history={history}>
       <div id="app" className="d-flex flex-column h-100">
-        <NavBar />
+        {/* <NavBar /> */}
+        <Nav />
         {isAuthenticated && (
           <Container className="flex-grow-1 mt-5">
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/list" component={List} />
-              <Route path="/add" component={Add} />
-            </Switch>
+            <Route
+              render={({ location }) => (
+              <AnimatePresence exitBeforeEnter initial={false}>
+                <Switch location={location} key={location.pathname}>
+                  <Route path="/" exact component={Home} />
+                  <Route path="/profile" component={Profile} />
+                  <Route path="/list" component={List} />
+                  <Route path="/add" component={Add} />
+                  <Route path="/slider" component={SimpleSlider} />
+                  <Route path="/userslider" component={UserSlider} />
+                </Switch>
+              </AnimatePresence>
+              )}
+            />
           </Container>
         )}
         {!isAuthenticated && (

@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
@@ -22,9 +24,29 @@ const AddListItem = () => {
     }
 
     return (
-        <div>
+        <div className="wrapper">
             <div className="main">
                 <h2>ADD USER</h2>
+                <motion.div
+                className="back"
+                animate={{
+                    x: 0,
+                    opacity: 1
+                }}
+                initial={{
+                    x: 100,
+                    opacity: 0
+                }}
+                exit={{
+                    x: -100,
+                    opacity: 0
+                }}
+                transition={{
+                    duration: 0.2
+                }}
+                >
+                    <Link to="/">← Back</Link>
+                </motion.div>
             </div>
             <Form>
                 <FormGroup>
