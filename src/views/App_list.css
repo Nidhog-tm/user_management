@@ -67,9 +67,10 @@
 }
 
 .back {
-  position: fixed;
+  position: absolute;
   top: 100px;
   right: 50px;
   font-size: 40px;
   z-index: 1;
+  color: black;
 }

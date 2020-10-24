@@ -16,7 +16,7 @@ const Top = () => {
       {!isAuthenticated && (
         <Button
           id="qsLoginBtn"
-          color="primary"
+          color="secondary"
           className="loginbutton"
           onClick={() => loginWithRedirect()}
         >

@@ -39,7 +39,7 @@ class Content extends Component {
           <Row className="d-flex justify-content-between">
             <Button
               id="qsUserListBtn"
-              color="info"
+              color="secondary"
               size="lg"
               outline
               block
@@ -50,7 +50,7 @@ class Content extends Component {
             </Button>
             <Button
               id="qsUserAddBtn"
-              color="info"
+              color="secondary"
               size="lg"
               outline
               block
@@ -61,7 +61,7 @@ class Content extends Component {
             </Button>
             <Button
               id="qsSampleSliderBtn"
-              color="info"
+              color="secondary"
               size="lg"
               outline
               block
@@ -72,7 +72,7 @@ class Content extends Component {
             </Button>
             <Button
               id="qsSampleSliderBtn"
-              color="info"
+              color="secondary"
               size="lg"
               outline
               block
