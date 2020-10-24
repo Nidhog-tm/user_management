@@ -5,7 +5,6 @@ import { Container } from "reactstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import Loading from "./components/Loading";
-import NavBar from "./components/NavBar";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import SimpleSlider from "./components/Slider";

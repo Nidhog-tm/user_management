@@ -1,6 +1,6 @@
 // import React from "react";
 import Slider from "react-slick";
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
  
@@ -10,7 +10,7 @@ import Loading from "../components/Loading";
 import ListItem from "../components/ListItem.js"
  
 const SimpleSlider = () =>  {
-  const[list, setList] = useState([1, 2, 3]);
+  const[list] = useState([1, 2, 3]);
     const settings = {
       dots: true,
       infinite: true,

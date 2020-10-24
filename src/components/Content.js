@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
 import { Button, Row } from "reactstrap";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 class Content extends Component {
